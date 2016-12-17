@@ -94,10 +94,6 @@ header.wide-header {
             opacity: 1 !important;
         }
 
-        footer svg polygon.show {
-            opacity: 1 !important;
-        }
-
     header.wide-header > div {
         position: absolute !important;
         top: 50% !important;
@@ -175,8 +171,8 @@ header.default-header {
     height: 170px !important;
 }
 
-footer{
-    position: absolute !important;
+footer {
+    position: fixed !important;
     background: #333 !important;
     text-align: center !important;
     overflow: hidden !important;
@@ -355,7 +351,6 @@ ul.experiments {
                 line-height: 20px !important;
                 white-space: normal !important;
                 color: #aaa !important;
-                width: 50px !important;
             }
 
         ul.experiments > li .description {
@@ -455,3 +450,16 @@ ul.categories {
         text-align:Justify;
         color:#4e4e4e;
     }
+
+li.category {
+    cursor: pointer;
+}
+
+li.selected {
+    background-color:#e1e1e1;
+    padding-left: 30px;
+}
+
+.main-div{
+    margin-bottom: 170px;
+}

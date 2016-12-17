@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="tr" ng-app="mfeminerBlog">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,42 +13,21 @@
     <link rel="stylesheet" href="assets/css/main.css" type="text/css" />
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="assets/plugins/font-awesome/font-awesome.min.css" />
+
+    <!--<script src="assets/js/angular.min.js"></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular-route.js"></script>
     <title>M. Furkan Eminer</title>
 </head>
 <body class="experiments">
-    <header class="wide-header">
+    <header ng-class="headerClass" ng-controller="HeaderController">
         <svg></svg>
-        <div class="me">
+        <div class="me" ng-hide="hideDescription" class="ng-hide">
             <img alt="me" src="assets/images/me_tiny.jpg">
             <p>Ben Furkan Eminer. Yazılım geliştirme, web uygulama güvenliği, güvenli uygulama geliştirme üzerine çalışmalar ve araştırmalar yapmaktayım. <a href="https://www.zemana.com/" target="_blank">Zemana</a>'da çalışıyorum. <a href="http://octosec.net/" target="_blank">Octosec</a> ekibinin üyesiyim.</p>
         </div>
     </header>
-    <section class="content">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3 hidden-sm">
-                    <ul class="list-group categories">
-                        <li class="list-group-item">
-                            <a href="/"><i class="fa fa-angle-double-right"></i> Tüm Yazılar</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-md-9 col-sm-12">
-                    <ul class="experiments">
-                            <li class="visible">
-                                <h3><a href="#">Blog</a> <span class="date">∞</span></h3>
-                                <p class="description">Bir gün mutlaka blog yazmayı düşünüyorum.</p>
-                                <ul class="tags">
-                                        <li>blog</li>
-                                        <li>önyazı</li>
-                                        <li>açıklama</li>
-                                </ul>
-                            </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+    <div class="main-div" ng-view></div>
     <footer>
         <svg></svg>
         <div>
