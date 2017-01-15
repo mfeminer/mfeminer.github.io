@@ -70,6 +70,7 @@ header.wide-header {
     text-align: center;
     overflow: hidden;
     font-size: 18px;
+    max-height: 450px;
 }
     header.wide-header svg {
         display: block;
