@@ -1,29 +1,30 @@
 angular.module('mfeminerBlog', ['ngRoute'])
-    .config(function($routeProvider) {
+    .config(function($routeProvider, $locationProvider) {
         $routeProvider
             .when('/', {
                 templateUrl: "home.html",
                 controller: "HomePageController"
             })
-            .when('/post/:postId', {
+            .when('/post/:category/:name', {
                 templateUrl: "post.html",
                 controller: "PostController"
             })
             .otherwise({
                 templateUrl: "404.html"
             });
-    })
-    .controller('HomePageController', ['$scope', '$location', 'webRequest', function ($scope, $location, webRequest) {
-        var self = $scope;
 
-        self.baseContentsUrl = "https://api.github.com/repos/mfeminer/mfeminer.github.io/contents/posts";
-        self.baseCommitsUrl = "https://api.github.com/repos/mfeminer/mfeminer.github.io/commits/master?path=";
+            if(window.history && window.history.pushState){
+                $locationProvider.hashPrefix('!');
+            }
+        })
+    .controller('HomePageController', ['$scope', '$location', 'webRequest', 'globalVariablesService', function ($scope, $location, webRequest, globalVariablesService) {
+        var self = $scope;
 
         self.categories = [];
         self.blogPosts = [];
 
         self.getCategories = function () {
-            webRequest.getAsync(self.baseContentsUrl, self.parseCategories);
+            webRequest.getAsync(globalVariablesService.getContentsUrl(), self.parseCategories);
         }
 
         self.parseCategories = function (categories) {
@@ -73,7 +74,7 @@ angular.module('mfeminerBlog', ['ngRoute'])
 
             blogPosts.forEach(function(blogPost) {
                 if (blogPost.type === "file") {
-                    var commitUrl = self.baseCommitsUrl + blogPost.path;
+                    var commitUrl = globalVariablesService.getCommitsUrl() + blogPost.path;
                     webRequest.getAsync(commitUrl, function(commit) {
                         commit = commit.commit;
                         self.blogPosts.push({
@@ -82,7 +83,9 @@ angular.module('mfeminerBlog', ['ngRoute'])
                             url: blogPost.url,
                             date: commit.author.date,
                             description: commit.message,
-                            postedBy: commit.committer.name
+                            postedBy: commit.committer.name,
+                            path: blogPost.path,
+                            raw: blogPost.download_url
                         });
                     });
                 }
@@ -90,19 +93,61 @@ angular.module('mfeminerBlog', ['ngRoute'])
         }
 
         self.goToPost = function (post) {
-            $location.path('/post/' + post.id);
+            globalVariablesService.setData(post);
+            $location.path('/post/' + post.path);
         }
 
         self.getCategories();
     }])
-    .controller('PostController', ['$scope', '$location', '$routeParams', 'webRequest', function ($scope, $location, $routeParams, webRequest) {
+    .controller('PostController', ['$scope', '$location', '$routeParams', 'webRequest', 'globalVariablesService', function ($scope, $location, $routeParams, webRequest, globalVariablesService) {
         //ali eren
         var self = $scope;
 
-        if(!$routeParams || !$routeParams.postId) {
-            $location.path('/404');
+        self.getBlogPostContent = function (rawUrl) {
+            webRequest.getAsync(rawUrl, function (result) {
+                self.post.content = self.convertMDToHtml(result);
+            });
         }
-        self.postId = $routeParams.postId;
+
+        self.convertMDToHtml = function (markdownText) {
+            // TODO: Add a library and implement content
+            return markdownText;
+        }
+
+        if (!!globalVariablesService.getData()) {
+            self.post = globalVariablesService.getData();
+
+            self.getBlogPostContent(self.post.raw);
+        }
+        else {
+            if(!$routeParams || !$routeParams.category || !$routeParams.name) {
+                $location.path('/404');
+            }
+
+            var postPath = $routeParams.category + "/" + $routeParams.name;
+
+            webRequest.getAsync(globalVariablesService.getContentsUrl() + postPath, function (blogPost) {
+
+                var commitUrl = globalVariablesService.getCommitsUrl() + blogPost.path;
+                webRequest.getAsync(commitUrl, function(commit) {
+
+                    commit = commit.commit;
+                    self.post = {
+                        id: blogPost.sha,
+                        name: blogPost.name,
+                        url: blogPost.url,
+                        date: commit.author.date,
+                        description: commit.message,
+                        postedBy: commit.committer.name,
+                        path: blogPost.path,
+                        raw: blogPost.download_url
+                    };
+                });
+
+                self.getBlogPostContent(blogPost.download_url);
+            });
+        }
+
     }])
     .controller('HeaderController', ['$scope', '$location', function ($scope, $location){
         var self = $scope;
@@ -126,8 +171,28 @@ angular.module('mfeminerBlog', ['ngRoute'])
                         callback(response.data);
                     },
                     function (response){
-                        console.log(response.status + " " + response.statusText, response);
+                        console.log(url + " " + response.status + " " + response.statusText, response);
                     });
             }
         }
+    })
+    .service('globalVariablesService', function() {
+        var _dataObj = null;
+        var _baseContentsUrl = "https://api.github.com/repos/mfeminer/mfeminer.github.io/contents/posts";
+        var _baseCommitsUrl = "https://api.github.com/repos/mfeminer/mfeminer.github.io/commits/master?path=";
+
+        return {
+            getData: function () {
+                return _dataObj;
+            },
+            setData: function (value) {
+                _dataObj = value;
+            },
+            getContentsUrl: function () {
+                return _baseContentsUrl;
+            },
+            getCommitsUrl: function () {
+                return _baseCommitsUrl;
+            }
+        };
     });

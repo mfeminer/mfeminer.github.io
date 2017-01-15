@@ -7,11 +7,11 @@
     <meta name="author" content="Furkan Eminer" />
     <meta name="description" content="Furkan Eminer - Blog" />
     <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Inconsolata|Slabo+27px' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Inconsolata|Slabo+27px' rel='stylesheet' type='text/css'>
     <link rel="icon" href="assets/images/madjack.jpg" type="image/png">
 
-    <link rel="stylesheet" href="assets/css/main.css" type="text/css" />
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/main.css" type="text/css" />
     <link rel="stylesheet" href="assets/plugins/font-awesome/font-awesome.min.css" />
 
     <!--<script src="assets/js/angular.min.js"></script>-->
@@ -19,9 +19,15 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular-route.js"></script>
     <title>M. Furkan Eminer</title>
 </head>
-<body class="experiments">
+<body class="default experiments">
     <header ng-class="headerClass" ng-controller="HeaderController">
         <svg></svg>
+        <div class="go-home">
+            <a ng-href="/">
+            <i class="fa fa-home" ng-show="hideDescription"></i>
+            Anasayfa
+            </a>
+        </div>
         <div class="me" ng-hide="hideDescription" class="ng-hide">
             <img alt="me" src="assets/images/me_tiny.jpg">
             <p>Ben Furkan Eminer. Yazılım geliştirme, web uygulama güvenliği, güvenli uygulama geliştirme üzerine çalışmalar ve araştırmalar yapmaktayım. <a href="https://www.zemana.com/" target="_blank">Zemana</a>'da çalışıyorum. <a href="http://octosec.net/" target="_blank">Octosec</a> ekibinin üyesiyim.</p>

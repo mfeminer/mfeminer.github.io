@@ -22,367 +22,331 @@ time, mark, audio, video {
 }
 
 html {
-    line-height: 1 !important;
+    line-height: 1;
 }
 
 ol, ul {
-    list-style: none !important;
+    list-style: none;
 }
 
 a img {
-    border: none !important;
+    border: none;
 }
 
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
-    display: block !important;
+    display: block;
 }
 
 /* END RESET */
 
 body {
-    font-family: 'Source Sans Pro', sans-serif !important;
-    color: #464646 !important;
-    font-size: 23px !important;
-    font-weight: 300 !important;
-    background: #f9f9f9 !important;
-    line-height: 1.3em !important;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #464646;
+    font-size: 23px;
+    font-weight: 300;
+    background: #f9f9f9;
+    line-height: 1.3em;
 }
 
     body.default {
-        font-family: 'Inconsolata' !important;
+        font-family: 'Inconsolata';
     }
 
 a {
-    color: #333 !important;
-    transition: color 100ms ease-out !important;
+    color: #333;
+    transition: color 100ms ease-out;
 }
 
     a:hover {
-        color: #999 !important;
+        color: #999;
     }
 
 /**
  * Common header.wide-header and footer related styles.
  */
 header.wide-header {
-    position: relative !important;
-    background: #333 !important;
-    text-align: center !important;
-    overflow: hidden !important;
-    font-size: 18px !important;
+    position: relative;
+    background: #333;
+    text-align: center;
+    overflow: hidden;
+    font-size: 18px;
 }
     header.wide-header svg {
-        display: block !important;
-        width: 100% !important;
-        opacity: 1 !important;
-        position: relative !important;
-        display: block !important;
-        background: #333 !important;
+        display: block;
+        width: 100%;
+        opacity: 1;
+        position: relative;
+        display: block;
+        background: #333;
     }
 
         header.wide-header svg polygon {
-            cursor: pointer !important;
-            opacity: 0 !important;
-            transition: opacity 300ms ease-out !important;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 300ms ease-out;
         }
 
         header.wide-header svg.show polygon {
-            opacity: 0.7 !important;
+            opacity: 0.7;
         }
 
         header.wide-header svg polygon:hover {
-            opacity: 1 !important;
+            opacity: 1;
         }
 
     header.wide-header > div {
-        position: absolute !important;
-        top: 50% !important;
-        left: 50% !important;
-        padding: 15px !important;
-        background-color: rgba(241, 241, 241, 0.9) !important;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2) !important;
-        transition-property: width, margin-left, border-radius, background-color, opacity !important;
-        transition-duration: 150ms !important;
-        transition-timing-function: ease-out !important;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        padding: 15px;
+        background-color: rgba(241, 241, 241, 0.9);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        transition-property: width, margin-left, border-radius, background-color, opacity;
+        transition-duration: 150ms;
+        transition-timing-function: ease-out;
     }
 
         header.wide-header > div:hover,
         footer > div:hover {
-            background-color: rgba(241, 241, 241, 1) !important;
+            background-color: rgba(241, 241, 241, 1);
         }
 
     header.wide-header > div {
-        width: 150px !important;
-        height: 150px !important;
-        border-radius: 90px !important;
-        margin-left: -90px !important;
-        margin-top: -90px !important;
-        text-align: left !important;
-        overflow: hidden !important;
-        opacity: 0 !important;
+        width: 150px;
+        height: 150px;
+        border-radius: 90px;
+        margin-left: -90px;
+        margin-top: -90px;
+        text-align: left;
+        overflow: hidden;
+        opacity: 0;
     }
 
         header.wide-header > div.show {
-            opacity: 1 !important;
+            opacity: 1;
         }
 
             header.wide-header > div.show:hover {
-                width: 500px !important;
-                margin-left: -250px !important;
-                border-radius: 0 !important;
+                width: 500px;
+                margin-left: -250px;
+                border-radius: 0;
             }
 
         header.wide-header > div img {
-            float: left !important;
-            width: 150px !important;
-            height: 150px !important;
-            border-radius: 75px !important;
-            transition-property: border-radius !important;
-            transition-duration: 150ms !important;
-            transition-timing-function: ease-out !important;
+            float: left;
+            width: 150px;
+            height: 150px;
+            border-radius: 75px;
+            transition-property: border-radius;
+            transition-duration: 150ms;
+            transition-timing-function: ease-out;
         }
 
         header.wide-header > div:hover img {
-            border-radius: 0 !important;
+            border-radius: 0;
         }
 
         header.wide-header > div p {
-            position: absolute !important;
-            top: 15px !important;
-            left: 180px !important;
-            line-height: 1.4em !important;
-            width: 335px !important;
-            margin-bottom: 0 !important;
+            position: absolute;
+            top: 15px;
+            left: 180px;
+            line-height: 1.4em;
+            width: 335px;
+            margin-bottom: 0;
         }
 
     header.wide-header > div {
-        box-sizing: content-box !important;
+        box-sizing: content-box;
     }
 
 /**
  * Common header.default-header and footer related styles.
  */
 header.default-header {
-    position: relative !important;
-    background: #333 !important;
-    text-align: center !important;
-    overflow: hidden !important;
-    font-size: 18px !important;
-    height: 170px !important;
+    position: relative;
+    background: #333;
+    text-align: center;
+    overflow: hidden;
+    font-size: 18px;
+    height: 100px;
 }
 
 footer {
-    position: fixed !important;
-    background: #333 !important;
-    text-align: center !important;
-    overflow: hidden !important;
-    font-size: 18px !important;
-    height: 170px !important;
+    position: fixed;
+    background: #333;
+    text-align: center;
+    overflow: hidden;
+    font-size: 18px;
+    height: 100px;
     width: 100%;
     bottom: 0;
 }
 
     header.default-header svg,
     footer svg {
-        display: block !important;
-        width: 100% !important;
-        opacity: 1 !important;
-        position: relative !important;
-        display: block !important;
-        background: #333 !important;
+        display: block;
+        width: 100%;
+        opacity: 1;
+        position: relative;
+        display: block;
+        background: #333;
     }
 
         header.default-header svg polygon,
         footer svg polygon {
-            cursor: pointer !important;
-            opacity: 0 !important;
-            transition: opacity 300ms ease-out !important;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 300ms ease-out;
         }
 
         header.default-header svg.show polygon {
-            opacity: 0.7 !important;
+            opacity: 0.7;
         }
 
         header.default-header svg polygon:hover {
-            opacity: 1 !important;
+            opacity: 1;
         }
 
 footer svg polygon.show {
-    opacity: 1 !important;
+    opacity: 1;
+}
+
+header.default-header > div.go-home {
+    left: 1%;
+    top: 25%;
 }
 
 header.default-header > div,
     footer > div {
-    position: absolute !important;
-    top: 50% !important;
-    left: 50% !important;
-    padding: 15px !important;
-    background-color: rgba(241, 241, 241, 0.9) !important;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2) !important;
-    transition-property: width, margin-left, border-radius, background-color, opacity !important;
-    transition-duration: 150ms !important;
-    transition-timing-function: ease-out !important;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 15px;
+    background-color: rgba(241, 241, 241, 0.9);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition-property: width, margin-left, border-radius, background-color, opacity;
+    transition-duration: 150ms;
+    transition-timing-function: ease-out;
 }
 
     header.default-header > div:hover {
-        background-color: rgba(241, 241, 241, 1) !important;
-    }
-
-header.default-header > div {
-    width: 150px !important;
-    height: 150px !important;
-    border-radius: 90px !important;
-    margin-left: -90px !important;
-    margin-top: -90px !important;
-    text-align: left !important;
-    overflow: hidden !important;
-    opacity: 0 !important;
-}
-
-    header.default-header > div.show {
-        opacity: 1 !important;
-    }
-
-        header.default-header > div.show:hover {
-            width: 500px !important;
-            margin-left: -250px !important;
-            border-radius: 0 !important;
-        }
-
-    header.default-header > div img {
-        float: left !important;
-        width: 150px !important;
-        height: 150px !important;
-        border-radius: 75px !important;
-        transition-property: border-radius !important;
-        transition-duration: 150ms !important;
-        transition-timing-function: ease-out !important;
-    }
-
-    header.default-header > div:hover img {
-        border-radius: 0 !important;
-    }
-
-    header.default-header > div p {
-        position: absolute !important;
-        top: 15px !important;
-        left: 180px !important;
-        line-height: 1.4em !important;
-        width: 335px !important;
-        margin-bottom: 0 !important;
+        background-color: rgba(241, 241, 241, 1);
     }
 
     footer > div {
-        position: absolute !important;
-        -webkit-transform: translate(-50%, -50%) !important;
-        transform: translate(-50%, -50%) !important;
+        position: absolute;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
     }
 
 header.default-header > div {
-    box-sizing: content-box !important;
+    box-sizing: content-box;
 }
 
 /**
  * Styles for my experiments list.
  */
 ul.experiments {
-    margin: 0 auto !important;
-    max-width: 960px !important;
+    margin: 0 auto;
+    max-width: 960px;
 }
 
     ul.experiments a {
-        text-decoration: none !important;
+        text-decoration: none;
     }
 
     ul.experiments > li {
-        padding: 15px !important;
-        font-size: 23px !important;
+        padding: 15px;
+        font-size: 23px;
     }
 
         /**
      * Add a small line between each experiment.
      */
         ul.experiments > li::after {
-            clear: both !important;
-            display: block !important;
-            content: " " !important;
+            clear: both;
+            display: block;
+            content: " ";
         }
 
         ul.experiments > li:not(:last-child)::after {
-            height: 1px !important;
-            width: 240px !important;
-            background: #eee !important;
-            border-bottom: 1px solid #fff !important;
-            margin: 0 auto !important;
+            height: 1px;
+            width: 240px;
+            background: #eee;
+            border-bottom: 1px solid #fff;
+            margin: 0 auto;
         }
 
         ul.experiments > li .canvas {
-            float: left !important;
-            opacity: 0 !important;
-            transition: opacity 600ms ease-out !important;
+            float: left;
+            opacity: 0;
+            transition: opacity 600ms ease-out;
         }
 
         ul.experiments > li.visible .canvas {
-            opacity: 1 !important;
+            opacity: 1;
         }
 
         ul.experiments > li h3,
         ul.experiments > li p,
         ul.experiments > li ul {
-            /*margin-left: 320px !important;*/
-            margin-bottom: 1em !important;
+            /*margin-left: 320px;*/
+            margin-bottom: 1em;
         }
 
         ul.experiments > li h3 {
-            margin-top: 65px !important;
-            /*text-transform: uppercase !important;*/
-            letter-spacing: 0.01em !important;
+            letter-spacing: 0.01em;
         }
 
             ul.experiments > li h3 a {
-                font-size: 50px !important;
-                word-spacing: 0.3em !important;
-                padding-right: 15px !important;
+                font-size: 50px;
+                word-spacing: 0.3em;
+                padding-right: 15px;
+            }
+
+            ul.experiments > li h3 a:hover {
+                text-decoration: none;
+                cursor: pointer;
             }
 
             ul.experiments > li h3 .date {
-                display: inline-block !important;
-                font-size: 15px !important;
-                line-height: 20px !important;
-                white-space: normal !important;
-                color: #aaa !important;
+                display: inline-block;
+                font-size: 15px;
+                line-height: 20px;
+                white-space: normal;
+                color: #aaa;
             }
 
         ul.experiments > li .description {
-            line-height: 1.3em !important;
+            line-height: 1.3em;
         }
 
             ul.experiments > li .description > a {
-                border-bottom: 1px solid #999 !important;
+                border-bottom: 1px solid #999;
             }
 
         ul.experiments > li .tags {
-            display: block !important;
+            display: block;
         }
 
             ul.experiments > li .tags > li {
-                display: inline-block !important;
-                background: #efefef !important;
-                padding: 5px 10px !important;
-                margin: 0 5px 10px 0 !important;
-                font-size: 18px !important;
+                display: inline-block;
+                background: #efefef;
+                padding: 5px 10px;
+                margin: 0 5px 10px 0;
+                font-size: 18px;
             }
 
                 ul.experiments > li .tags > li.chrome {
-                    padding: 0 !important;
+                    padding: 0;
                 }
 
                     ul.experiments > li .tags > li.chrome a,
                     ul.experiments > li .tags > li.chrome a:visited,
                     ul.experiments > li .tags > li.chrome a:hover {
-                        padding: 5px 10px 5px 35px !important;
-                        display: block !important;
-                        background: url("/assets/images/chrome.png") 7px center/25px no-repeat !important;
+                        padding: 5px 10px 5px 35px;
+                        display: block;
+                        background: url("/assets/images/chrome.png") 7px center/25px no-repeat;
                     }
 
 ul.categories {
@@ -393,46 +357,46 @@ ul.categories {
  * General content styles
  */
 .content {
-    position: relative !important;
-    padding: 50px 0 !important;
-    box-shadow: 0 0 7px rgba(0, 0, 0, 0.2) !important;
+    position: relative;
+    padding: 50px 0;
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.2);
 }
 
 
     .content > p {
-        margin: 0 auto 20px !important;
-        padding: 0 40px !important;
-        max-width: 1130px !important;
+        margin: 0 auto 20px;
+        padding: 0 40px;
+        max-width: 1130px;
     }
 
 .four-o-four {
-    text-align: center !important;
+    text-align: center;
 }
 
     .four-o-four .content h2 {
-        font-size: 60px !important;
-        line-height: 1.75em !important;
+        font-size: 60px;
+        line-height: 1.75em;
     }
 
     .four-o-four .content p {
-        font-size: 40px !important;
-        line-height: 1.75em !important;
+        font-size: 40px;
+        line-height: 1.75em;
     }
 
         .four-o-four .content p a {
-            text-decoration: none !important;
-            font-size: 16px !important;
-            color: #999 !important;
-            border-bottom: 1px solid #aaa !important;
+            text-decoration: none;
+            font-size: 16px;
+            color: #999;
+            border-bottom: 1px solid #aaa;
         }
 
     .four-o-four .content .gif {
-        background-repeat: no-repeat !important;
-        background-position: center center !important;
-        background-size: contain !important;
-        background-image: url("/resources/images/404.gif") !important;
-        height: 500px !important;
-        margin: 50px 0 !important;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: contain;
+        background-image: url("/resources/images/404.gif");
+        height: 500px;
+        margin: 50px 0;
     }
 
     h1.post-header{
