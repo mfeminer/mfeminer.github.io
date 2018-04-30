@@ -131,6 +131,7 @@ header.wide-header {
                 width: 500px;
                 margin-left: -250px;
                 border-radius: 0;
+                max-width: 100%;
             }
 
         header.wide-header > div img {
@@ -423,8 +424,4 @@ li.category {
 li.selected {
     background-color:#e1e1e1;
     padding-left: 30px;
-}
-
-.main-div{
-    margin-bottom: 170px;
 }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="tr" ng-app="mfeminerBlog">
+<html lang="tr">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,39 +14,45 @@
     <link rel="stylesheet" href="assets/css/main.css" type="text/css" />
     <link rel="stylesheet" href="assets/plugins/font-awesome/font-awesome.min.css" />
 
-    <!--<script src="assets/js/angular.min.js"></script>-->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular-route.js"></script>
     <title>M. Furkan Eminer</title>
 </head>
 <body class="default experiments">
-    <header ng-class="headerClass" ng-controller="HeaderController">
+    <header class="wide-header">
         <svg></svg>
         <div class="go-home">
-            <a ng-href="/">
-            <i class="fa fa-home" ng-show="hideDescription"></i>
+            <a href="/">
+            <i class="fa fa-home"></i>
             Anasayfa
             </a>
         </div>
-        <div class="me" ng-hide="hideDescription" class="ng-hide">
+        <div class="me">
             <img alt="me" src="assets/images/me_tiny.jpg">
-            <p>Ben Furkan Eminer. Yazılım geliştirme, web uygulama güvenliği, güvenli uygulama geliştirme üzerine çalışmalar ve araştırmalar yapmaktayım. <a href="https://www.zemana.com/" target="_blank">Zemana</a>'da çalışıyorum. <a href="http://octosec.net/" target="_blank">Octosec</a> ekibinin üyesiyim.</p>
+            <p>Ben Furkan Eminer. <a href="https://tr.linkedin.com/in/furkaneminer" target="_blank">Şurada</a> kısa bir özgeçmişim, sayfanın en altında da iletişim bilgilerim yer almakta. Sosyal medya hesaplarımı aktif olarak kullanmıyorum. İletişim için lütfen e-posta adresimi kullanın.</p>
         </div>
     </header>
-    <div class="main-div" ng-view></div>
+    <div class="main-div">
+        <section class="content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <p>Henüz blog yazısı yok.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
     <footer>
         <svg></svg>
         <div>
             <p>
                 İletişim:
-                <a href="https://twitter.com/mfeminer"><i class="fa fa-twitter"></i></a> | 
-                <a href="https://tr.linkedin.com/in/furkaneminer"><i class="fa fa-linkedin"></i></a> | 
-                <a href="mailto:furkaneminer@gmail.com"><i class="fa fa-envelope-o"></i></a> | 
-                <a href="mailto:furkan@octosec.net"><i class="fa fa-envelope-o"></i></a>
+                <a href="mailto:f.eminer@prismacsi.com"><i class="fa fa-envelope-o"></i></a> | 
+                <a href="https://twitter.com/mfeminer" target="_blank"><i class="fa fa-twitter"></i></a> | 
+                <a href="https://tr.linkedin.com/in/furkaneminer" target="_blank"><i class="fa fa-linkedin"></i></a>
             </p>
         </div>
     </footer>
-    <script type="text/javascript" src="assets/js/modernizr.js"></script>
+    
     <script type="text/javascript" src="assets/js/header.js"></script>
     <script type="text/javascript" src="assets/js/page.js"></script>
 
