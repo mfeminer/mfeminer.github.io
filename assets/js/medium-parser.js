@@ -9,11 +9,11 @@
                     $("#logo").append(`<img src="${response.feed["image"]}" class="rounded mx-auto d-block">`)
                     var display = '';
                     $.each(response.items, function (k, item) {
-                        display += `<div class="card mb-3 mx-auto mr-5 " style="width: 20rem;">`;
+                        display += `<div class="card mb-3 mx-auto mr-5 ">`;
                         var src = item["thumbnail"]; // use thumbnail url
                         display += `<img src="${src}" class="card-img-top" alt="Cover image">`;
                         display += `<div class="card-body">`;
-                        display += `<h5 class="card-title"><a href="${item.link}">${item.title}</a></h5>`;
+                        display += `<h5 class="card-title"><a href="${item.link}" target="_blank">${item.title}</a></h5>`;
                         var yourString = item.description.replace(/<img[^>]*>/g,""); //replace with your string.
                         yourString = yourString.replace('h4', 'p');
                         yourString = yourString.replace('h3', 'p');
