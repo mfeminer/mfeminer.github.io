@@ -1,62 +1,81 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="author" content="Furkan Eminer" />
     <meta name="description" content="Furkan Eminer - Blog" />
-    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro&subset=latin-ext,latin' rel='stylesheet'
+        type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Inconsolata|Slabo+27px' rel='stylesheet' type='text/css'>
-    <link rel="icon" href="assets/images/madjack.jpg" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Play&display=swap" rel="stylesheet">
+    <link rel="icon" href="assets/images/madjack.png" type="image/png">
 
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/main.css" type="text/css" />
     <link rel="stylesheet" href="assets/plugins/font-awesome/font-awesome.min.css" />
 
     <title>M. Furkan Eminer</title>
 </head>
+
 <body class="default experiments">
     <header class="wide-header">
         <svg></svg>
-        <div class="go-home">
-            <a href="/">
-            <i class="fa fa-home"></i>
-            Anasayfa
-            </a>
-        </div>
         <div class="me">
             <img alt="me" src="assets/images/me_tiny.jpg">
-            <p>Ben Furkan Eminer. <a href="https://tr.linkedin.com/in/furkaneminer" target="_blank">Şurada</a> kısa bir özgeçmişim, sayfanın en altında da iletişim bilgilerim yer almakta. Sosyal medya hesaplarımı aktif olarak kullanmıyorum. İletişim için lütfen e-posta adresimi kullanın.</p>
+            <p class="text-dark">Ben Furkan Eminer. <a href="https://www.linkedin.com/in/furkaneminer" target="_blank"
+                    class="text-muted">Şurada</a> kısa bir özgeçmişim, sayfanın en altında da iletişim bilgilerim var.
+                Sosyal medya hesaplarımı aktif olarak kullanmıyorum. İletişim için lütfen e-posta adresimi kullanın.</p>
         </div>
     </header>
-    <div class="main-div">
-        <section class="content">
-            <div class="container">
-                <div class="row" id="jsonContent">
+
+    <div class="container mt-2">
+        <div class="card">
+            <div class="card-body">
+                <h6 class="card-title text-muted" id="feed-title"></h6>
+                <div class="row" id="blog-content">
                 </div>
             </div>
-        </section>
-    </div>
-    <footer>
-        <svg></svg>
-        <div>
-            <p>
-                İletişim:
-                <a href="mailto:furkaneminer@gmail.com"><i class="fa fa-envelope-o"></i></a> | 
-                <a href="https://twitter.com/mfeminer" target="_blank"><i class="fa fa-twitter"></i></a> | 
-                <a href="https://tr.linkedin.com/in/furkaneminer" target="_blank"><i class="fa fa-linkedin"></i></a> | 
-                <a href="https://medium.com/@mfeminer" target="_blank"><i class="fa fa-medium"></i></a>
-            </p>
         </div>
+    </div>
+    <footer class="fixed-bottom" >
+        <svg></svg>
+        <ul class="list-inline">
+            <li class="list-inline-item">
+                <a href="mailto:furkaneminer@gmail.com" data-toggle="tooltip" data-placement="top" title="e-posta">
+                    <i class="fa fa-envelope-o"></i>
+                </a>
+            </li>
+            <li class="list-inline-item">
+                <a href="https://twitter.com/mfeminer" target="_blank" data-toggle="tooltip" data-placement="top"
+                    title="twitter">
+                    <i class="fa fa-twitter"></i>
+                </a>
+            </li>
+            <li class="list-inline-item">
+                <a href="https://medium.com/@mfeminer" target="_blank" data-toggle="tooltip" data-placement="top"
+                    title="medium">
+                    <i class="fa fa-medium"></i>
+                </a>
+            </li>
+            <li class="list-inline-item">
+                <a href="https://www.linkedin.com/in/furkaneminer" target="_blank" data-toggle="tooltip"
+                    data-placement="top" title="linkedin">
+                    <i class="fa fa-linkedin"></i>
+                </a>
+            </li>
+        </ul>
     </footer>
-    
-    <script type="text/javascript" src="assets/js/header.js"></script>
-    <script type="text/javascript" src="assets/js/page.js"></script>
 
-    <script type="text/javascript" src="assets/js/jquery-3.1.1.min.js"></script>
-    <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
-    
+    <script type="text/javascript" src="assets/js/header.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
     <script type="text/javascript" src="assets/js/medium-parser.js"></script>
 </body>
+
 </html>

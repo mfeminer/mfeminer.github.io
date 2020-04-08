@@ -191,36 +191,6 @@
                     me.classList.add('show');
             }, 300);
         }, 300);
-
-
-        // Get a copy of request animation frame (Modernizr will return the proper prefixed function).
-        var requestAnimFrame = (Modernizr.prefixed('requestAnimationFrame', window) ||
-            function (callback) { window.setTimeout(callback, 1000 / 60); });
-
-        // Set up a helper function that will choose the best available CSS3 property to shift
-        // and element vertically. Namely, if CSS3 3d transforms are supported, use them, otherwise
-        // fall back to using 2d transforms.
-        var transformProperty = Modernizr.prefixed('transform');
-        var shiftElement = (Modernizr.csstransforms3d ? function (el, y) {
-            if (!!el)
-                el.style[transformProperty] = 'translate3d(0, ' + y + 'px, 0)';
-        } : function (el, y) {
-            if (!!el)
-                el.style[transformProperty] = 'translate(0, ' + y + 'px)';
-        });
-
-        window.addEventListener('scroll', function () {
-            var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
-            if (scrollTop < headerFooterHeight) {
-                requestAnimFrame(function () {
-                    // Cap the scroll percentage to avoid bounce weirdness on osx.
-                    var percent = Math.max((scrollTop / headerFooterHeight), 0);
-
-                    shiftElement(headerSVG, percent * 200);
-                    shiftElement(me, -percent * 75);
-                });
-            }
-        });
     });
 
 })();
