@@ -10,7 +10,6 @@ let getFeed = url => {
 };
 
 let gotFeed = response => {
-    console.log(response);
     let $content = $("#blog-content");
 
     if(response.status == "ok") {
